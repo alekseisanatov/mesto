@@ -1,0 +1,11 @@
+.popup__form_text {
+  padding-bottom: 13px;
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+  border: 0;
+  border-bottom: 1px solid #000;
+  font-size: 14px;
+  line-height: 17px;
+  transition: all .5s;
+}
