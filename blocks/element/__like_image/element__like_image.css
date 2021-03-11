@@ -1,7 +1,0 @@
-.element__like_image {
-  transition: all .5s;
-}
-
-.element__like_image:hover {
-  opacity: 0.5;
-} 
