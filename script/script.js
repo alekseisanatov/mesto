@@ -13,8 +13,8 @@ popupClose.addEventListener('click', () => {
 
 
 let formElement = document.querySelector('.popup__form');
-let nameInput = document.querySelector('.popup__form_name');
-let jobInput = document.querySelector('.popup__form_descr');
+let nameInput = document.querySelector('.popup__name');
+let jobInput = document.querySelector('.popup__descr');
 
 
 function formSubmitHandler (evt) {
