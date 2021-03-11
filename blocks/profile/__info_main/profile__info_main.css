@@ -1,4 +1,12 @@
 .profile__info_main {
   display: flex;
   align-items: top;
+  max-width: 340px;
+}
+
+@media screen and (max-width: 620px) {
+  .profile__info_main {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
 }

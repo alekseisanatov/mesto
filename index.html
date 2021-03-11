@@ -15,12 +15,12 @@
   <section class="popup">
     <div class="popup__container">
       <div class="popup__close">
-        <img src="./images/popup-close.svg" alt="Закрыть">
+        <img class="popup__close_image" src="./images/popup-close.svg" alt="Закрыть">
       </div>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__form" action="post">
-        <input class="popup__form_text" type="text" name="title" id="title" placeholder="Жак-Ив Кусто">
-        <input class="popup__form_text" type="text" name="subtitle" id="subtitle" placeholder="Исследователь океана">
+        <input class="popup__form_text popup__form_name" type="text" name="title" id="title" value="Жак-Ив Кусто">
+        <input class="popup__form_text popup__form_descr" type="text" name="subtitle" id="subtitle" value="Исследователь океана">
         <input class="popup__form_button" type="submit" value="Сохранить">
       </form>
     </div>

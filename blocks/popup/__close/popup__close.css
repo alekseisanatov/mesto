@@ -4,3 +4,17 @@
   top: -50px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 620px) {
+  .popup__close {
+    right: -30px;
+    top: -30px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .popup__close {
+    right: -10px;
+    top: -40px;
+  }
+}

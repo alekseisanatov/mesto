@@ -5,3 +5,15 @@
   font-size: 24px;
   line-height: 29px;
 }
+
+@media screen and (max-width: 620px) {
+  .popup__title {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .popup__title {
+    text-align: center;
+  }
+}
