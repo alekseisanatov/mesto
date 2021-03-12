@@ -5,7 +5,9 @@
 
 @media screen and (max-width: 620px) {
   .profile__main {
-    flex-direction: column-reverse;
-    justify-content: center;
+    width: calc(100% - 20px * 2);
+    margin: 0 auto;
+    justify-content: flex-end;
+    align-items: center;
   }
 }

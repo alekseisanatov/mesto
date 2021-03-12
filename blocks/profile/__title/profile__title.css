@@ -9,14 +9,18 @@
 
 @media screen and (max-width: 768px) {
   .profile__title {
-    max-width: 360px;
+    max-width: 260px;
     font-size: 32px;
   }
 }
 
 @media screen and (max-width: 620px) {
   .profile__title {
+    max-width: 190px;
     margin: 0;
+    margin-right: 10px;
+    font-size: 27px;
+    line-height: 33px;
   }
 }
 
