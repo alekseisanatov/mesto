@@ -4,8 +4,16 @@
   width: 100%;
   margin-bottom: 30px;
   border: 0;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
   font-size: 14px;
   line-height: 17px;
   transition: all .5s;
+}
+
+@media screen and (max-width: 450px) {
+  .popup__text {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 13px;
+  }
 }

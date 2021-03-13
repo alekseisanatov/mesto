@@ -10,101 +10,102 @@
 <body class="page">
   <header class="header">
     <img class="header__logo" src="./images/header-logo.svg" alt="Место">
-    <div class="header__line"></div>
   </header>
-  <section class="profile">
-    <div class="profile__main-content">
-      <img src="./images/avatar.png" alt="Аватар пользователя" class="profile__avatar">
-      <div class="profile__info">
-        <div class="profile__main">
-          <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button">
-            <img class="profile__change" src="./images/edit-button.svg" alt="Изменить">
-          </button>
+  <main class="main">
+    <section class="profile">
+      <div class="profile__main-content">
+        <img src="./images/avatar.png" alt="Аватар пользователя" class="profile__avatar">
+        <div class="profile__info">
+          <div class="profile__main">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <button type="button" class="profile__edit-button" aria-label="Изменить Имя и Описание">
+              <img class="profile__change" src="./images/edit-button.svg" alt="Изменить">
+            </button>
+          </div>
+          <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <p class="profile__subtitle">Исследователь океана</p>
       </div>
-    </div>
-    <button class="profile__add-button">
-      <img class="profile__add" src="./images/add-button.svg" alt="Плюс">
-    </button>
-  </section>
-  <section class="elements">
-    <ul class="elements__grid">
-      <li class="element">
-        <img src="./images/karachaevo.jpg" alt="Карачаевск" class="element__image">
-        <div class="element__footer">
-          <div class="element__title">Карачаевск</div>
-          <button class="element__like">
-            <img class="element__like-image" src="./images/like.svg" alt="Лайк">
-          </button>
-        </div>
-      </li>
-      <li class="element">
-        <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="element__image">
-        <div class="element__footer">
-          <div class="element__title">Гора Эльбрус</div>
-          <button class="element__like">
-            <img class="element__like-image" src="./images/like.svg" alt="Лайк">
-          </button>
-        </div>
-      </li>
-      <li class="element">
-        <img src="./images/dombai.jpg" alt="Домбай" class="element__image">
-        <div class="element__footer">
-          <div class="element__title">Домбай</div>
-          <button class="element__like">
-            <img class="element__like-image" src="./images/like.svg" alt="Лайк">
-          </button>
-        </div>
-      </li>
-      <li class="element">
-        <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="element__image">
-        <div class="element__footer">
-          <div class="element__title">Гора Эльбрус</div>
-          <button class="element__like">
-            <img class="element__like-image" src="./images/like.svg" alt="Лайк">
-          </button>
-        </div>
-      </li>
-      <li class="element">
-        <img src="./images/dombai.jpg" alt="Домбай" class="element__image">
-        <div class="element__footer">
-          <div class="element__title">Домбай</div>
-          <button class="element__like">
-            <img class="element__like-image" src="./images/like.svg" alt="Лайк">
-          </button>
-        </div>
-      </li>
-      <li class="element">
-        <img src="./images/karachaevo.jpg" alt="Карачаевo" class="element__image">
-        <div class="element__footer">
-          <div class="element__title">Карачаево-Черкессия</div>
-          <button class="element__like">
-            <img class="element__like-image" src="./images/like.svg" alt="Лайк">
-          </button>
-        </div>
-      </li>
-    </ul>
-  </section>
-  <section class="popup">
-    <div class="popup__container">
-      <div class="popup__close">
-        <img class="popup__image" src="./images/popup-close.svg" alt="Закрыть">
-      </div>
-      <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form" action="post">
-        <input class="popup__text popup__name" type="text" name="title" id="title" value="Жак-Ив Кусто">
-        <input class="popup__text popup__descr" type="text" name="subtitle" id="subtitle" value="Исследователь океана">
-        <button class="popup__button">Сохранить</button>
-      </form>
-    </div>
-  </section>
+      <button type="button" class="profile__add-button" aria-label="Добавить пост">
+        <img class="profile__add" src="./images/add-button.svg" alt="Плюс">
+      </button>
+    </section>
+    <section class="elements">
+      <ul class="elements__grid">
+        <li class="element">
+          <img src="./images/karachaevo.jpg" alt="Карачаевск" class="element__image">
+          <div class="element__footer">
+            <h2 class="element__title">Карачаевск</h2>
+            <button type="button" class="element__like" aria-label='Лайк'>
+              <img class="element__like-image" src="./images/like.svg" alt="Лайк">
+            </button>
+          </div>
+        </li>
+        <li class="element">
+          <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="element__image">
+          <div class="element__footer">
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <button type="button" class="element__like" aria-label='Лайк'>
+              <img class="element__like-image" src="./images/like.svg" alt="Лайк">
+            </button>
+          </div>
+        </li>
+        <li class="element">
+          <img src="./images/dombai.jpg" alt="Домбай" class="element__image">
+          <div class="element__footer">
+            <h2 class="element__title">Домбай</h2>
+            <button type="button" class="element__like" aria-label='Лайк'>
+              <img class="element__like-image" src="./images/like.svg" alt="Лайк">
+            </button>
+          </div>
+        </li>
+        <li class="element">
+          <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="element__image">
+          <div class="element__footer">
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <button type="button" class="element__like" aria-label='Лайк'>
+              <img class="element__like-image" src="./images/like.svg" alt="Лайк">
+            </button>
+          </div>
+        </li>
+        <li class="element">
+          <img src="./images/dombai.jpg" alt="Домбай" class="element__image">
+          <div class="element__footer">
+            <h2 class="element__title">Домбай</h2>
+            <button type="button" class="element__like" aria-label='Лайк'>
+              <img class="element__like-image" src="./images/like.svg" alt="Лайк">
+            </button>
+          </div>
+        </li>
+        <li class="element">
+          <img src="./images/karachaevo.jpg" alt="Карачаевo" class="element__image">
+          <div class="element__footer">
+            <h2 class="element__title">Карачаево-Черкессия</h2>
+            <button type="button" class="element__like" aria-label='Лайк'>
+              <img class="element__like-image" src="./images/like.svg" alt="Лайк">
+            </button>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
   <footer class="footer">
     <p class="footer__text">
       © 2021 Mesto Russia - Aleksei Sanatov
     </p>
   </footer>
-  <script src="./script/script.js"></script>
+  <div class="popup">
+    <div class="popup__container">
+      <button type="button" class="popup__close" aria-label="Закрыть окно">
+        <img class="popup__image" src="./images/popup-close.svg" alt="Закрыть">
+      </button>
+      <h3 class="popup__title">Редактировать профиль</h3>
+      <form class="popup__form" method="POST" name="popupForm" action="#">
+        <input class="popup__text popup__text_name" type="text" name="title" id="title" placeholder="Имя">
+        <input class="popup__text popup__text_descr" type="text" name="subtitle" id="subtitle" placeholder="О себе">
+        <button type="submit" class="popup__button" aria-label="Сохранить">Сохранить</button>
+      </form>
+    </div>
+  </в>
+  <script src="./scripts/script.js"></script>
 </body>
 </html>

@@ -1,6 +1,9 @@
 .popup__button {
   width: 358px;
   height: 50px;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
   background-color: rgba(0, 0, 0, 1);
   border: 0;
   color: #fff;
@@ -14,6 +17,10 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.popup__button:focus {
+  outline: 0;
+}
+
 @media screen and (max-width: 620px) {
   .popup__button {
     max-width: 300px;
@@ -22,6 +29,9 @@
 
 @media screen and (max-width: 450px) {
   .popup__button {
-    max-width: 200px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 15px;
   }
 }
