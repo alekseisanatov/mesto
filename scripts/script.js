@@ -45,7 +45,7 @@ const initialCards = [
   }
 ];
 
-function insertCard(str, img) {
+function createCard(str, img) {
   const elementList = elementTemplate.cloneNode(true);
   const elementListTitle = elementList.querySelector('.element__title');
   const elementListImage = elementList.querySelector('.element__image');
@@ -74,7 +74,11 @@ function insertCard(str, img) {
   elementListTitle.textContent = str;
   elementListImage.style.backgroundImage = 'url(' + img + ')';
 
-  elementsContainer.prepend(elementList);
+  insertCard(elementList);
+}
+
+function insertCard(element) {
+  elementsContainer.prepend(element);
 }
 
 
@@ -97,7 +101,7 @@ function formSubmitHandler (evt) {
 
 function itemFormSubmitHandler (evt) {
   evt.preventDefault();
-  insertCard(placeInput.value, linkInput.value);
+  createCard(placeInput.value, linkInput.value);
 
   modalClose(popupItem);
   placeInput.value = '';
@@ -106,7 +110,7 @@ function itemFormSubmitHandler (evt) {
 }
 
 for (let i = 0; i < initialCards.length; i++) {
-  insertCard(initialCards[i].name, initialCards[i].link);
+  createCard(initialCards[i].name, initialCards[i].link);
 }
 
 popupOpenItem.addEventListener('click', ()=> {
