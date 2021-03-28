@@ -74,11 +74,11 @@ function createCard(str, img) {
   elementListTitle.textContent = str;
   elementListImage.style.backgroundImage = 'url(' + img + ')';
 
-  insertCard(elementList);
+  return elementList;
 }
 
-function insertCard(element) {
-  elementsContainer.prepend(element);
+function insertCard(str, img, container) {
+  container.prepend(createCard(str, img));
 }
 
 
@@ -101,7 +101,8 @@ function formSubmitHandler (evt) {
 
 function itemFormSubmitHandler (evt) {
   evt.preventDefault();
-  createCard(placeInput.value, linkInput.value);
+  // createCard(placeInput.value, linkInput.value);
+  insertCard(placeInput.value, linkInput.value, elementsContainer);
 
   modalClose(popupItem);
   placeInput.value = '';
@@ -110,7 +111,7 @@ function itemFormSubmitHandler (evt) {
 }
 
 for (let i = 0; i < initialCards.length; i++) {
-  createCard(initialCards[i].name, initialCards[i].link);
+  insertCard(initialCards[i].name, initialCards[i].link, elementsContainer);
 }
 
 popupOpenItem.addEventListener('click', ()=> {
