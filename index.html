@@ -45,9 +45,11 @@
         <img class="popup__image" src="./images/popup-close.svg" alt="Закрыть">
       </button>
       <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="popup__form" method="POST" name="popupForm" action="#">
+      <form class="popup__form" method="POST" name="popupForm" action="#" novalidate>
         <input class="popup__text popup__text_input_name" type="text" name="title" id="title" placeholder="Имя">
+        <span class="popup__form-error name-input-error"></span>
         <input class="popup__text popup__text_input_descr" type="text" name="subtitle" id="subtitle" placeholder="О себе">
+        <span class="popup__form-error descr-input-error"></span>
         <button type="submit" class="popup__button" aria-label="Сохранить">Сохранить</button>
       </form>
     </div>
@@ -58,9 +60,11 @@
         <img class="popup__image" src="./images/popup-close.svg" alt="Закрыть">
       </button>
       <h3 class="popup__title">Новое место</h3>
-      <form class="popup__form popup-item__form" method="POST" name="popupItemForm" action="#">
+      <form class="popup__form popup-item__form" method="POST" name="popupItemForm" action="#" novalidate>
         <input class="popup__text popup__text_input_place" type="text" name="title" id="place" placeholder="Название">
-        <input class="popup__text popup__text_input_link" type="text" name="subtitle" id="link" placeholder="Ссылка на картинку">
+        <span class="popup__form-error place-input-error"></span>
+        <input class="popup__text popup__text_input_link" type="url" name="subtitle" id="link" placeholder="Ссылка на картинку">
+        <span class="popup__form-error link-input-error"></span>
         <button type="submit" class="popup__button" aria-label="Создать">Создать</button>
       </form>
     </div>
@@ -91,5 +95,6 @@
     </li>
   </template>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>
