@@ -46,6 +46,8 @@
 @import url('../blocks/popup/__form-error/popup__form-error.css');
 @import url('../blocks/popup/__form-error/_state/popup__form-error_active.css');
 @import url('../blocks/popup/__label/popup__label.css');
+@import url('../blocks/popup/__form/_type/popup__form_type_error.css');
+@import url('../blocks/popup/__button/_type/popup__button_disabled.css');
 
 @import url('../blocks/modal/modal.css');
 @import url('../blocks/modal/__container/modal__container.css');

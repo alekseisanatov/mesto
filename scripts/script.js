@@ -101,13 +101,31 @@ function formSubmitHandler (evt) {
 
 function itemFormSubmitHandler (evt) {
   evt.preventDefault();
-  // createCard(placeInput.value, linkInput.value);
   insertCard(placeInput.value, linkInput.value, elementsContainer);
 
   modalClose(popupItem);
   placeInput.value = '';
   linkInput.value = '';
+}
 
+function closePopupOnEscape (evt) {
+  if(evt.key === 'Escape') {
+    if(popup.classList.contains('popup_active')) {
+      modalClose(popup);
+    }
+    if(popupItem.classList.contains('popup_active')) {
+      modalClose(popupItem);
+    }
+  }
+}
+
+function closePopupOnOverlay(evt) {
+  if(evt.target.classList.contains('popup')) {
+    modalClose(popup);
+  }
+  if(evt.target.classList.contains('popup-item')) {
+    modalClose(popupItem);
+  }
 }
 
 for (let i = 0; i < initialCards.length; i++) {
@@ -135,4 +153,8 @@ popupOpen.addEventListener('click', () => {
   jobInput.value = subtitle.textContent;
   modalOpen(popup);
 });
+
+popup.addEventListener('click', closePopupOnOverlay);
+popupItem.addEventListener('click', closePopupOnOverlay);
+document.addEventListener('keydown', closePopupOnEscape);
 
