@@ -1,3 +1,6 @@
+import Card from './Card.js';
+import FormValidator from "./FormValidator.js";
+
 const popup = document.querySelector('.popup');
 const popupOpenButton = document.querySelector('.profile__edit-button');
 const popupCloseButton = document.querySelector('.popup__close');
@@ -12,12 +15,11 @@ const subtitle = document.querySelector('.profile__subtitle');
 const popupItem = document.querySelector('.popup-item');
 const popupOpenItem = document.querySelector('.profile__add-button');
 const popupCloseItem = document.querySelector('.popup-item__close');
-const modalImage = document.querySelector('.modal');
-const modalImageClose = document.querySelector('.modal__close');
-const modalImagePicture = document.querySelector('.modal__img');
-const modalImageCaption = document.querySelector('.modal__figcaption');
+export const modalImage = document.querySelector('.modal');
+export const modalImageClose = document.querySelector('.modal__close');
+export const modalImagePicture = document.querySelector('.modal__img');
+export const modalImageCaption = document.querySelector('.modal__figcaption');
 const elementsContainer = document.querySelector('.elements__grid');
-const elementTemplate = document.querySelector('#element').content.querySelector('.element');
 const initialCards = [
   {
     name: 'Архыз',
@@ -45,40 +47,33 @@ const initialCards = [
   }
 ];
 
-function createCard(str, img) {
-  const elementList = elementTemplate.cloneNode(true);
-  const elementListTitle = elementList.querySelector('.element__title');
-  const elementListImage = elementList.querySelector('.element__image');
-  const elementListButtonLike = elementList.querySelector('.element__like');
-  const elementListButtonRemove = elementList.querySelector('.element__trash');
+initialCards.forEach(item => {
+  const card = new Card(item.name, item.link, '#element');
+  elementsContainer.append(card.renderCard());
+});
 
-  elementListButtonLike.addEventListener('click', (e)=> {
-    e.target.classList.toggle('element__like_active');
-  });
+const editFormValidation = new FormValidator({
+  inputSelector: '.popup__text',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__form_type_error',
+  errorClass: 'popup__form-error_active'
+}, '.popup__form');
+editFormValidation.enableValidation();
 
-  elementListButtonRemove.addEventListener('click', ()=> {
-    elementList.remove();
-  });
+const addFormValidation = new FormValidator({
+  inputSelector: '.popup__text',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__form_type_error',
+  errorClass: 'popup__form-error_active'
+}, '.popup-item__form');
+addFormValidation.enableValidation();
 
-  elementListImage.addEventListener('click', ()=> {
-    modalOpen(modalImage);
-    modalImageCaption.textContent = str;
-    modalImagePicture.src = img;
-    modalImagePicture.alt = str;
-  });
 
-  modalImageClose.addEventListener('click', ()=> {
-    modalClose(modalImage);
-  });
-
-  elementListTitle.textContent = str;
-  elementListImage.style.backgroundImage = 'url(' + img + ')';
-
-  return elementList;
-}
-
-function insertCard(str, img, container) {
-  container.prepend(createCard(str, img));
+function insertCard(name, link, container) {
+  const card = new Card(name, link, '#element');
+  container.prepend(card.renderCard());
 }
 
 function popupOpen(popupElement) {
@@ -89,11 +84,11 @@ function popupClose(popupElement) {
   popupElement.classList.remove('popup_active');
 }
 
-function modalClose(modalElement) {
+export function modalClose(modalElement) {
   modalElement.classList.remove('modal_active');
 }
 
-function modalOpen(modalElement) {
+export function modalOpen(modalElement) {
   modalElement.classList.add('modal_active');
 }
 
@@ -142,10 +137,6 @@ function eventListenerOnEscape() {
   } else {
     document.removeEventListener('keydown', closePopupOnEscape);
   }
-}
-
-for (let i = 0; i < initialCards.length; i++) {
-  insertCard(initialCards[i].name, initialCards[i].link, elementsContainer);
 }
 
 popupOpenItem.addEventListener('click', ()=> {
