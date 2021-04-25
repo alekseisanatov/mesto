@@ -31,11 +31,27 @@ export default class Card {
         modalImagePicture.alt = this._name;
 
         modalImage.querySelector(Card.selectors.modalCloseButton).addEventListener('click', this._closeImageModal);
+        modalImage.addEventListener('click', this._closeImageModalOnOverlay);
+        document.addEventListener('keydown', this._closeImageModalOnEscape);
     }
 
     _closeImageModal = () => {
         modalClose(modalImage);
         modalImage.querySelector(Card.selectors.modalCloseButton).removeEventListener('click', this._closeImageModal);
+    }
+
+    _closeImageModalOnOverlay(evt) {
+        if(evt.target.classList.contains('modal')) {
+            modalClose(modalImage);
+            modalImage.removeEventListener('click', this._closeImageModalOnOverlay);
+        }
+    }
+
+    _closeImageModalOnEscape = (evt) => {
+        if(evt.key === 'Escape') {
+            modalClose(modalImage);
+            document.removeEventListener('keydown', this._closeImageModalOnEscape);
+        }
     }
 
     _deleteCard = () => {

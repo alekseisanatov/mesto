@@ -78,6 +78,7 @@ function insertCard(name, link, container) {
 
 function popupOpen(popupElement) {
   popupElement.classList.add('popup_active');
+  addFormValidation.enableValidation();
 }
 
 function popupClose(popupElement) {
@@ -104,7 +105,6 @@ function formSubmitHandler (evt) {
 function itemFormSubmitHandler (evt) {
   evt.preventDefault();
   insertCard(placeInput.value, linkInput.value, elementsContainer);
-
   popupClose(popupItem);
   placeInput.value = '';
   linkInput.value = '';
