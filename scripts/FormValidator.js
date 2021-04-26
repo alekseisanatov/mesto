@@ -6,25 +6,25 @@ export default class FormValidator {
         this._inputErrorClass = inputErrorClass;
         this._errorClass = errorClass;
 
-        this._form = form;
+        this._form = document.querySelector(form);
     }
 
     _showInputError = (inputElement, errorMessage) => {
-        const errorElement = document.querySelector(this._form).querySelector(`.${inputElement.id}-error`);
+        const errorElement = this._form.querySelector(`.${inputElement.id}-error`);
         inputElement.classList.add(this._inputErrorClass);
         errorElement.textContent = errorMessage;
         errorElement.classList.add(this._errorClass);
     }
 
     _hideInputError = (inputElement) => {
-        const errorElement = document.querySelector(this._form).querySelector(`.${inputElement.id}-error`);
+        const errorElement = this._form.querySelector(`.${inputElement.id}-error`);
         inputElement.classList.remove(this._inputErrorClass);
         errorElement.classList.remove(this._errorClass);
         errorElement.textContent = '';
     }
 
     _toggleButtonState = (inputList) => {
-        const buttonElement = document.querySelector(this._form).querySelector(this._submitButtonSelector);
+        const buttonElement = this._form.querySelector(this._submitButtonSelector);
         const hasNotValidInput = inputList.some(inputElement => !inputElement.validity.valid);
         if(hasNotValidInput) {
             buttonElement.setAttribute('disabled', true);
@@ -44,7 +44,7 @@ export default class FormValidator {
     }
 
     _setEventListeners = () => {
-        const inputList = Array.from(document.querySelector(this._form).querySelectorAll(this._inputSelector));
+        const inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
         inputList.forEach((inputElement) => {
             inputElement.addEventListener('input', () => {
                 this._checkInputValidity(inputElement);
@@ -55,7 +55,7 @@ export default class FormValidator {
     }
 
     enableValidation = () => {
-        document.querySelector(this._form).addEventListener('submit', (evt) => {
+        this._form.addEventListener('submit', (evt) => {
             evt.preventDefault();
         });
         this._setEventListeners();
