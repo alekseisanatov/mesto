@@ -39,13 +39,13 @@
       © 2021 Mesto Russia - Aleksei Sanatov
     </p>
   </footer>
-  <div class="popup">
+  <div class="popup profile-popup">
     <div class="popup__container">
       <button type="reset" class="popup__close" aria-label="Закрыть окно">
-        <img class="popup__image" src="./images/popup-close.svg" alt="Закрыть">
+        <img class="popup__image popup__close-button" src="./images/popup-close.svg" alt="Закрыть">
       </button>
       <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="popup__form" method="POST" name="popupForm" action="#" novalidate>
+      <form class="popup__form popup-profile__form" method="POST" name="popupForm" action="#" novalidate>
         <label for="name-input" class="popup__label">
           <input class="popup__text popup__text_input_name" type="text" name="title" id="name-input" placeholder="Имя" minlength="2" maxlength="40" required autocomplete="off">
           <span class="popup__form-error name-input-error"></span>
@@ -60,8 +60,8 @@
   </div>
   <div class="popup popup-item">
     <div class="popup__container">
-      <button type="reset" class="popup__close popup-item__close" aria-label="Закрыть окно">
-        <img class="popup__image" src="./images/popup-close.svg" alt="Закрыть">
+      <button type="reset" class="popup__close popup-item__close " aria-label="Закрыть окно">
+        <img class="popup__image popup__close-button" src="./images/popup-close.svg" alt="Закрыть">
       </button>
       <h3 class="popup__title">Новое место</h3>
       <form class="popup__form popup-item__form" method="POST" name="popupItemForm" action="#" novalidate>
@@ -77,10 +77,10 @@
       </form>
     </div>
   </div>
-  <div class="modal">
+  <div class="popup image-popup">
     <div class="modal__container">
-      <button type="reset" class="modal__close" aria-label="Закрыть окно">
-        <img class="modal__image" src="./images/popup-close.svg" alt="Закрыть">
+      <button type="reset" class="popup__close modal__close" aria-label="Закрыть окно">
+        <img class="modal__image popup__close-button" src="./images/popup-close.svg" alt="Закрыть">
       </button>
       <figure>
         <img class="modal__img" src="#" alt="#">

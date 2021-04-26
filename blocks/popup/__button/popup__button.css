@@ -13,6 +13,10 @@
   transition: all .5s;
 }
 
+.popup__button:disabled.popup__button:hover {
+  background-color: #fff;
+}
+
 .popup__button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
