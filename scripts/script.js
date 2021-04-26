@@ -85,7 +85,7 @@ initialCards.forEach(item => {
   elementsContainer.append(createCard(item.name, item.link));
 });
 
-const editFormValidation = new FormValidator(dataSelectors, '.popup__form');
+const editFormValidation = new FormValidator(dataSelectors, '.profile-form');
 editFormValidation.enableValidation();
 
 const addFormValidation = new FormValidator(dataSelectors, '.popup-item__form');
