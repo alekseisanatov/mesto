@@ -140,6 +140,7 @@ popupOpenButton.addEventListener('click', () => {
   nameInput.value = title.textContent;
   jobInput.value = subtitle.textContent;
   openPopup(profilePopup);
+  editFormValidation.resetValidation();
 });
 
 
