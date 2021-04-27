@@ -2,6 +2,7 @@ import Card from './Card.js';
 import FormValidator from "./FormValidator.js";
 
 const profilePopup = document.querySelector('.profile-popup');
+const popupSaveButton = document.querySelector('.popup__button');
 const popupOpenButton = document.querySelector('.profile__edit-button');
 const formElement = document.querySelector('.popup__form');
 const formItemElement = document.querySelector('.popup-item__form');
@@ -64,16 +65,11 @@ popups.forEach((popup) => {
   });
 });
 
-function openPopupAddEventListenerOnEsc () {
-  openPopup(modalImage);
-  document.addEventListener('keydown', closeByEscape);
-}
-
 function handleCardClick(name, link) {
   modalImageCaption.textContent = name;
   modalImagePicture.src = link;
   modalImagePicture.alt = name;
-  openPopupAddEventListenerOnEsc();
+  openPopup(modalImage);
 }
 
 function createCard(name, link) {
@@ -98,7 +94,6 @@ function insertCard(name, link, container) {
 
 function openPopup(popupElement) {
   popupElement.classList.add('popup_active');
-  addFormValidation.enableValidation();
   document.addEventListener('keydown', closeByEscape);
 }
 
@@ -133,6 +128,8 @@ function closeByEscape(evt) {
 
 popupOpenItem.addEventListener('click', ()=> {
   openPopup(popupItem);
+  addFormValidation.resetValidation();
+  popupSaveButton.disabled = true;
 });
 
 formItemElement.addEventListener('submit', itemFormSubmitHandler);
