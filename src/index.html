@@ -13,7 +13,10 @@
   <main class="main">
     <section class="profile">
       <div class="profile__main-content">
-        <img src="<%=require('./images/avatar.png')%>" alt="Аватар пользователя" class="profile__avatar">
+        <div class="profile__avatar-container">
+          <img class="profile__avatar_type_image" src="<%=require('./images/avatar.png')%>" alt="Аватар">
+          <button class="profile__avatar_type_button"></button>
+        </div>
         <div class="profile__info">
           <div class="profile__main">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -87,9 +90,35 @@
       </figure>
     </div>
   </div>
+  <div class="popup popup-delete">
+    <div class="popup__container popup__container_type_delete">
+      <button type="reset" class="popup__close popup-delete__close" aria-label="Закрыть окно">
+        <img class="popup__image popup__close-button" src="<%=require('./images/popup-close.svg')%>" alt="Закрыть">
+      </button>
+      <h3 class="popup__title">Вы уверены?</h3>
+      <form class="popup__form popup-delete__form">
+        <button type="submit" class="popup__button popup__button_type_delete" aria-label="Удалить-карточку">Да</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup-avatar">
+    <div class="popup__container popup__container_type_avatar">
+      <button type="reset" class="popup__close popup-avatar__close" aria-label="Закрыть окно">
+        <img class="popup__image popup__close-button" src="<%=require('./images/popup-close.svg')%>" alt="Закрыть">
+      </button>
+      <h3 class="popup__title">Обновить аватар</h3>
+      <form class="popup__form popup-avatar__form" method="POST" name="popupEditAvatarForm" action="#" novalidate>
+        <label for="place-input" class="popup__label">
+          <input class="popup__text popup__text_input_avatar" type="url" name="avatar" id="avatar-input" placeholder="Ссылка на аватар" required autocomplete="off">
+          <span class="popup__form-error avatar-input-error"></span>
+        </label>
+        <button type="submit" class="popup__button" aria-label="Сохранить">Сохранить</button>
+      </form>
+    </div>
+  </div>
   <template id="element">
     <li class="element">
-      <button class="element__trash" type="button" aria-label="Удалить">
+      <button class="element__trash element__trash_hidden" type="button" aria-label="Удалить">
         <img src="<%=require('./images/Trash.svg')%>" alt="Удалить">
       </button>
       <div class="element__image" style=""></div>
@@ -97,6 +126,7 @@
         <h2 class="element__title"></h2>
         <button type="button" class="element__like" aria-label='Лайк'>
           <img class="element__like-image" src="<%=require('./images/like.svg')%>" alt="Лайк">
+          <p class="element__like_type_counter">0</p>
         </button>
       </div>
     </li>
