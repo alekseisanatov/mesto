@@ -1,10 +1,9 @@
-# Проект 4: Место
+# Project: Mesto
 
-## Проект решает задачи социальной сети, где можно размещать свои посты, картинки с надписями и делиться этим с другими
-### Технологии, которые используется флексы, гриды, адаптив, vanilla js, api, webpack.
-* Добавлена связь с api  в последнем апдейте.И теперь можно добавлять карточки другим пользователям и лайкать карточки других пользователей
+## The main problem that solve this project is social media where you can post your photos with capture and share it to other people.
+### Stack that is used in this project - Html, Css, vanilla JS, webpack, API
 
-### Планы по доработке
-* Добавить авторизацию
+### Feature plans:
+* Add authorization
 
-[Посмотреть проект](https://alekseisanatov.github.io/mesto/)
+[Project link](https://alekseisanatov.github.io/mesto/)
